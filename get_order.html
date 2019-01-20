@@ -1,0 +1,375 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="{% static 'js/MakeOrder.js' %}"></script>
+
+
+</head>
+<body>
+
+
+
+<form class="w3-container" action="{% url 'make_order' %}" method="post">
+{% csrf_token %}
+<div class="container">
+<div class="card-deck">
+
+
+
+  <div class="card">
+
+    <div class="card-body">
+     <div class="w3-container w3-blue">
+  <h2>Household Items</h2>
+</div>
+      <table class="table table-light" >
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Item</th>
+                      <th scope="col">Quantity</th>
+                    <th scope="col">Price(Rs)</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"><input class="w3-check" type="checkbox"></th>
+                    <td>Bedsheet Single</td>
+                      <td><input id="Bedsheet_Single_no" class="w3-input" type="text" value="0" name="Bedsheet_Single"></td>
+                    <td><h4 id="Bedsheet_Single_price">0</h4></td>
+
+                  </tr>
+                  <tr>
+                    <th scope="row"><input class="w3-check" type="checkbox"></th>
+                    <td>Bedsheet Double</td>
+                      <td><input id="Bedsheet_Double_no" class="w3-input" type="text" value="0" name="Bedsheet_Double"></td>
+                    <td><h4 id="Bedsheet_Double_price">0</h4></td>
+
+                  </tr>
+                    <tr>
+                    <th scope="row"><input class="w3-check" type="checkbox"></th>
+                    <td>Bath Towel</td>
+                        <td><input id="Bath_towel_no" class="w3-input" type="text" value="0" name="Bath_Towel"></td>
+                    <td><h4 id="Bath_towel_price">0</h4></td>
+
+                  </tr>
+                    <tr>
+                    <th scope="row"><input class="w3-check" type="checkbox"></th>
+                    <td>Pillow Cover</td>
+                        <td><input id="Pillow_cover_no" class="w3-input" type="text" value="0" name="Pillow_Cover"></td>
+                    <td><h4 id="Pillow_cover_price">0</h4></td>
+
+                  </tr>
+                    <tr>
+                    <th scope="row"><input class="w3-check" type="checkbox"></th>
+                    <td>Hand Towel</td>
+                        <td><input id="Hand_towel_no" class="w3-input" type="text" value="0" name="Hand_Towel"></td>
+                    <td><h4 id="Hand_towel_price">0</h4></td>
+
+                  </tr>
+                    <tr>
+                    <th scope="row"><input class="w3-check" type="checkbox"></th>
+                    <td>Bathmat</td>
+                        <td><input id="Bathmat_no" class="w3-input" type="text" value="0" name="Bath_Mat"></td>
+                    <td><h4 id="Bathmat_price">0</h4></td>
+
+                  </tr>
+                    <tr>
+                    <th scope="row"><input class="w3-check" type="checkbox"></th>
+                    <td>Quilt/Blanket</td>
+                        <td><input id="Quilt_no" class="w3-input" type="text" value="0" name="Quilt"></td>
+                    <td><h4 id="Quilt_price">0</h4></td>
+
+                  </tr>
+                    <tr>
+                    <th scope="row"><input class="w3-check" type="checkbox"></th>
+                    <td>Curtains(Big)</td>
+                        <td><input id="Curtains_Big_no" class="w3-input" type="text" value="0" name="Curtains_Big"></td>
+                    <td><h4 id="Curtains_Big_price">0</h4></td>
+
+                  </tr>
+                    <tr>
+                    <th scope="row"><input class="w3-check" type="checkbox"></th>
+                    <td>Curtains(Small)</td>
+                        <td><input id="Curtains_small_no" class="w3-input" type="text" value="0" name="Curtains_Small"></td>
+                    <td><h4 id="Curtains_small_price">0</h4></td>
+
+                  </tr>
+                    <tr>
+                    <th scope="row"><input class="w3-check" type="checkbox"></th>
+                    <td>Cushion Cover</td>
+                        <td><input id="Cushion_cover_no" class="w3-input" type="text" value="0" name="Cushion_Cover"></td>
+                    <td><h4 id="Cushion_cover_price">0</h4></td>
+
+                  </tr>
+                    <tr>
+                    <th scope="row"><input class="w3-check" type="checkbox"></th>
+                    <td>Table Cloth</td>
+                        <td><input id="Table_cloth_no" class="w3-input" type="text" value="0" name="Table_Cloth"></td>
+                    <td><h4 id="Table_cloth_price">0</h4></td>
+
+                  </tr>
+                    <tr>
+                    <th scope="row"><input class="w3-check" type="checkbox"></th>
+                    <td>Shower Curtains</td>
+                        <td><input id="Shower_curtain_no" class="w3-input" type="text" value="0" name="Shower_Curtains"></td>
+                    <td><h4 id="Shower_curtain_no">0</h4></td>
+
+                  </tr>
+                    <tr>
+                    <th scope="row"><input class="w3-check" type="checkbox"></th>
+                    <td>Hanky</td>
+                        <td><input id="Hankey_no" class="w3-input" type="text" value="0" name="Hanky"></td>
+                    <td><h4 id="Hankey_price">0</h4></td>
+
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+  </div>
+
+    <div class="card">
+
+    <div class="card-body">
+      <div class="w3-container w3-blue">
+  <h2>Gents</h2>
+</div>
+      <table class="table table-light">
+
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Item</th>
+                      <th scope="col">Quantity</th>
+                    <th scope="col">Price(Rs)</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"><input class="w3-check" type="checkbox"></th>
+                    <td>Pant/track Pant/Jeans Pant</td>
+                    <td> <input id="Jeans_no" class="w3-input" type="text" value="0" name="Jeans"></td>
+                    <td><h4 id="Jeans_price">0</h4></td>
+
+
+                  </tr>
+                  <tr>
+                    <th scope="row"><input class="w3-check" type="checkbox"></th>
+                    <td>Shirt/Tshirt</td>
+                      <td><input id="Shirt_no" class="w3-input" type="text" value="0" name="Shirt"></td>
+                    <td><h4 id="Shirt_price">0</h4></td>
+
+                  </tr>
+                    <tr>
+                    <th scope="row"><input class="w3-check" type="checkbox"></th>
+                    <td>Pair Socks</td>
+                        <td><input id="Sock_no" class="w3-input" type="text" value="0" name="Socks"></td>
+                    <td><h4 id="Sock_price">0</h4></td>
+
+                  </tr>
+                    <tr>
+                    <th scope="row"><input class="w3-check" type="checkbox"></th>
+                    <td>Shorts</td>
+                        <td><input id="Shorts_no" class="w3-input" type="text" value="0" name="Shorts"></td>
+                    <td><h4 id="Shorts_price">0</h4></td>
+
+                  </tr>
+                    <tr>
+                    <th scope="row"><input class="w3-check" type="checkbox"></th>
+                    <td>Sweater</td>
+                        <td><input id="Sweater_no" class="w3-input" type="text" value="0" name="Sweater"></td>
+                    <td><h4 id="Sweater_price">0</h4></td>
+
+                  </tr>
+                    <tr>
+                    <th scope="row"><input class="w3-check" type="checkbox"></th>
+                    <td>Jerkin/Jacket</td>
+                        <td><input id="Jacket_no" class="w3-input" type="text" value="0" name="Jacket"></td>
+                    <td><h4 id="Jacket_price">0</h4></td>
+
+                  </tr>
+                    <tr>
+                    <th scope="row"><input class="w3-check" type="checkbox"></th>
+                    <td>Dhoti</td>
+                        <td><input id="Dhoti_no" class="w3-input" type="text" value="0" name="Dhoti"></td>
+                    <td><h4 id="Dhoti_price">0</h4></td>
+
+                  </tr>
+                    <tr>
+                    <th scope="row"><input class="w3-check" type="checkbox"></th>
+                    <td>Blazer/Coat</td>
+                        <td><input id="Blazer_no" class="w3-input" type="text" value="0" name="Blazer"></td>
+                    <td><h4 id="Blazer_price">0</h4></td>
+
+                  </tr>
+
+                    <tr>
+                    <th scope="row"><input class="w3-check" type="checkbox"></th>
+                    <td>Tie</td>
+                        <td><input id="Tie_no" class="w3-input" type="text" value="0" name="Tie"></td>
+                    <td><h4 id="Tie_price">0</h4></td>
+
+                  </tr>
+
+                    <tr>
+                    <th scope="row"><input class="w3-check" type="checkbox"></th>
+                    <td>Shawl</td>
+                        <td><input id="Shawl_no" class="w3-input" type="text" value="0" name="Shawl"></td>
+                    <td><h4 id="Shawl_price">0</h4></td>
+
+                  </tr>
+                    <tr>
+                    <th scope="row"><input class="w3-check" type="checkbox"></th>
+                    <td>Kurta-Pyjama(Ethnic Wear)</td>
+                        <td><input id="Kurta_Pyjama_no" class="w3-input" type="text" value="0" name="Kurta_Pyjama"></td>
+                    <td><h4 id="Kurta_Pyjama_price">0</h4></td>
+
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+  </div>
+
+
+    </div> <!-- end of card deck -->
+
+
+<br>
+<br>
+<!--
+<div class="row">
+  <div class="col-sm-6">
+
+    <div class="card">
+
+    <div class="card-body">
+     <div class="w3-container w3-blue">
+  <h2>Ladies</h2>
+</div>
+      <table class="table table-light">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Item</th>
+                      <th scope="col">Quantity</th>
+                    <th scope="col">Price(Rs)</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"><input class="w3-check" type="checkbox"></th>
+                    <td>Top</td>
+                      <td><input id="Top_no" class="w3-input" type="text" value="0" name="Top"></td>
+                    <td><h4 id="Top_price">0</h4></td>
+
+                  </tr>
+                  <tr>
+                    <th scope="row"><input class="w3-check" type="checkbox"></th>
+                    <td>Pyjama/legging</td>
+                      <td><input id="Pyjama_no" class="w3-input" type="text" value="0" name="Leggings"></td>
+                    <td><h4 id="Pyjama_price">0</h4></td>
+
+                  </tr>
+                    <tr>
+                    <th scope="row"><input class="w3-check" type="checkbox"></th>
+                    <td>Duppata</td>
+                        <td><input id="Duppata_no" class="w3-input" type="text" value="0" name="Duppata"></td>
+                    <td><h4 id="Duppata_price">0</h4></td>
+
+                  </tr>
+                    <tr>
+                    <th scope="row"><input class="w3-check" type="checkbox"></th>
+                    <td>Nighty</td>
+                        <td><input id="Nighty_no" class="w3-input" type="text" value="0" name="Nighty"></td>
+                    <td><h4 id="Nighty_price">0</h4></td>
+
+                  </tr>
+                    <tr>
+                    <th scope="row"><input class="w3-check" type="checkbox"></th>
+                    <td>Saree</td>
+                        <td><input id="Saree_no" class="w3-input" type="text" value="0" name="Saree"></td>
+                    <td><h4 id="Saree_price">0</h4></td>
+
+                  </tr>
+                    <tr>
+                    <th scope="row"><input class="w3-check" type="checkbox"></th>
+                    <td>Set(Top and Payjama)</td>
+                        <td><input id="Top_Payjama_no" class="w3-input" type="text" value="0" name="Top_Payjama"></td>
+                    <td><h4 id="Top_Payjama_price">0</h4></td>
+
+
+
+                </tbody>
+              </table>
+    </div>
+  </div>
+    </div>
+-->
+<!--
+  <div class="col-sm-6">
+
+     <div class="card">
+    <div class="card-body">
+     <div class="w3-container w3-blue">
+  <h2>Kids</h2>
+</div>
+      <table class="table table-light">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Item</th>
+                    <th scope="col">Quantity</th>
+                      <th scope="col">Price(Rs)</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"><input class="w3-check" type="checkbox"></th>
+                    <td>Kids Frock</td>
+
+                    <td><input id="Kids_Frock_no" class="w3-input" type="text" value="0" name="Frock"></td>
+                   <td><h4 id="Kids_Frock_price">0</h4></td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><input class="w3-check" type="checkbox"></th>
+                    <td>Kids Cloth</td>
+                      <td><input id="Kids_cloth_no" class="w3-input" type="text" value="0" name="Kids_Cloth"></td>
+                    <td><h4 id="Kids_cloth_price">0</h4></td>
+
+                  </tr>
+
+                </tbody>
+              </table>
+    </div>
+  </div>
+    </div>
+-->
+    </div>
+    <br>
+
+    <center><button type="submit" class="btn btn-danger">Proceed to checkout</button></center>
+</div>
+    <br>
+
+    </form>
+</body>
+</html>
